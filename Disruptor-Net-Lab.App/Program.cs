@@ -6,13 +6,46 @@ using Disruptor_Net_Lab.Core;
 
 namespace Disruptor_Net_Lab.App
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            DemoNonDSLDisruptor();
-            Console.ReadLine();
+            var isExit = false;
+            while (!isExit)
+            {
+                ShowMsg();
+                var selection = Console.ReadLine();
+
+                switch (selection)
+                {
+                    case "1":
+                        DemoDSLDisruptor();
+                        break;
+                    case "2":
+                        DemoNonDSLDisruptor();
+                        break;
+                    case "3":
+                        DemoDSLUnicast();
+                        break;
+                    case "4":
+                        DemoNonDSLUnicast();
+                        break;
+                    case "e":
+                        isExit = true;
+                        break;
+                }
+            }
+        }
+
+        static void ShowMsg()
+        {
+            Console.WriteLine("[1] DemoDSLDisruptor");
+            Console.WriteLine("[2] DemoNonDSLDisruptor");
+            Console.WriteLine("[3] DemoDSLUnicast");
+            Console.WriteLine("[4] DemoNonDSLUnicast");
+            
+            Console.WriteLine("or input [e] for exit");
+            Console.Write("Please tpye number:");
         }
 
         static void DemoDSLDisruptor()
@@ -61,5 +94,6 @@ namespace Disruptor_Net_Lab.App
             eventProcessor.Halt();
 
         }
+       
     }
 }
