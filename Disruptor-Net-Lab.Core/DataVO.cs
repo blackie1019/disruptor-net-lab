@@ -1,4 +1,4 @@
-﻿namespace Disruptor_Net_Lab.App
+﻿namespace Disruptor_Net_Lab.Core
 {
     public class DataVO
     {

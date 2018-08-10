@@ -2,7 +2,7 @@
 using System.Threading;
 using Disruptor;
 
-namespace Disruptor_Net_Lab.App
+namespace Disruptor_Net_Lab.Core
 {
     public class DataEventHandler:IEventHandler<DataVO>
     {
